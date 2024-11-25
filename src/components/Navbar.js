@@ -1,22 +1,46 @@
-import styled from 'styled-components';
+import React from "react";
+import '../static/css/Navbar.css';
 
-export const Navbar = styled.nav`
-display: flex;
-background-color: black;
-color: white;
-padding: 10px;
-font-size: 20px;
-justify-content: center;
-align-items: center;
-`;
+function Navbar() {
+  const handleMenuClick = () => {
+    // Lógica para exibir/esconder o menu em telas menores
+    const nav = document.querySelector(".navbar ul");
+    nav.classList.toggle("show");
+  };
 
-export const NavList = styled.ul`
-display: flex;
-list-style-type: none;
-margin: 0;
-padding: 0;
-gap: 40px;
+  return (
+    <header>
+      <nav className="navbar">
+        <div className="logo">
+          <h1>Projeto Sanba</h1>
+        </div>
+        <ul>
+          <li>
+            <a href="#">HOME</a>
+          </li>
+          <li>
+            <a href="#">SOBRE NOS</a>
+          </li>
+          <li>
+            <a href="/accounts/logout/">LOGOUT</a>
+          </li>
+          <li>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              CONTATOS
+            </a>
+          </li>
+        </ul>
+        <div className="menu-icon" onClick={handleMenuClick}>
+          <div className="line1"></div>
+          <div className="line2"></div>
+          <div className="line3"></div>
+        </div>
+      </nav>
+    </header>
+  );
+}
 
-`;
-
-// export default {Navbar,NavList}
+export default Navbar;

@@ -1,19 +1,19 @@
-import {Navbar,NavList} from "./components/navbar";
-// import NavList from "./components/navbar";
-
-
+import React from "react";
+import Navbar from "./components/Navbar";
+import Body from "./components/Body";
 function App() {
   return (
-    
-      <Navbar >
-        <NavList>
-          <li>Primeiro Item</li>
-          <li>Segundo Item</li>
-          <li>Terceiro Item</li>
-        </NavList>
-      </Navbar>
-    
+    <div>
+      <Navbar />
+      <main>
+        
+        <Body/>
+
+      
+
+      </main>
+    </div>
   );
 }
 
-export default App
+export default App;
